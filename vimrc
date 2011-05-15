@@ -13,10 +13,6 @@ set hlsearch " highlight the last searched term
 
 syntax on " syntax highlighting
 
-"filetype plugin on " use the file type plugins
-
-"filetype plugin indent on
-
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
 			\ if ! exists("g:leave_my_cursor_position_alone") |
@@ -24,7 +20,6 @@ autocmd BufReadPost *
 			\ exe "normal g'\"" |
 			\ endif |
 			\ endif
-
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
@@ -38,7 +33,6 @@ autocmd FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtab
 "endif
 
 let mapleader = ","
-
 
 if has('gui_running')
 	colorscheme ir_black
