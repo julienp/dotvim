@@ -1,3 +1,4 @@
+filetype on "http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html#comment-87526162
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
