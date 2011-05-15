@@ -10,6 +10,7 @@ set ruler " show the cursor position
 set hidden " dont require saving before switching buffera
 set viminfo='20,\"200 " keep a .viminfo file
 set hlsearch " highlight the last searched term
+set tabstop=4
 
 syntax on " syntax highlighting
 
@@ -23,6 +24,8 @@ autocmd BufReadPost *
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+let python_highlight_all = 1
+let python_highlight_indent_errors = 1
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
@@ -64,4 +67,6 @@ autocmd BufWinLeave * call clearmatches()
 
 set laststatus=2 "alwasy show status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+set nofoldenable "dont fold by default
 
