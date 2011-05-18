@@ -12,6 +12,9 @@ set hidden " dont require saving before switching buffera
 set viminfo='20,\"200 " keep a .viminfo file
 set hlsearch " highlight the last searched term
 set tabstop=4
+set nofoldenable "dont fold by default
+set laststatus=2 "alwasy show status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 syntax on " syntax highlighting
 
@@ -36,7 +39,7 @@ let python_highlight_indent_errors = 1
 "	map <D-t> :CommandT<CR>
 "endif
 
-let mapleader = ","
+let mapleader = "," ",t for Commant-T
 
 if has('gui_running')
 	colorscheme ir_black
@@ -65,9 +68,4 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-set laststatus=2 "alwasy show status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-set nofoldenable "dont fold by default
 
