@@ -59,17 +59,12 @@ set listchars=tab:▸\ ,eol:¬
 
 "highlight trailing whitespace in red
 "http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-"highlight ExtraWhitespace ctermbg=red guibg=red
-"match ExtraWhitespace /\s\+$/
-"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-"autocmd BufWinLeave * call clearmatches()
-
-"only highlight trailing whitespace in python files
-highlight TrailingWhitespace ctermbg=red guisp=red gui=undercurl guifg=white guibg=red
-au BufRead,BufNewFile *.py match TrailingWhitespace /\s\+$/
-
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 set laststatus=2 "alwasy show status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
