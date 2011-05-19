@@ -41,6 +41,8 @@ set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffe
 set nobackup
 set mouse=a "enable mouse in terminal
 set showcmd "show command in the last line of the screen
+set wrap linebreak
+set showbreak=↪ "show at the beginning of wrapped lines
 
 syntax on " syntax highlighting
 
