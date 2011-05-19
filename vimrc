@@ -18,7 +18,7 @@ set hlsearch " highlight the last searched term
 set incsearch "find as you type
 set ignorecase "http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set smartcase
-set gdefault
+set gdefault "global search/replace
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
