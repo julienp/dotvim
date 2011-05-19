@@ -56,6 +56,19 @@ autocmd FileType python setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+
+function! <SID>StripTrailingWhitespaces()
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Do the business:
+	%s/\s\+$//e
+	" Clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
+endfunction
+
 "Key mpapping
 let mapleader = ","
 "\v in search makes vim use normal regexp
@@ -72,7 +85,7 @@ inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 "inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 "inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 ",W to remove all trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>W :call <SID>StripTrailingWhitespaces()<CR>
 ",d to toggle NERDTree
 nnoremap <leader>d :NERDTreeToggle<CR>
 ",i to toggle show invisibiles
@@ -92,9 +105,9 @@ map <c-h> <c-w>h
 "endif
 
 
-colorscheme ir_black
 if has('gui_running')
 	set background=dark
+	colorscheme ir_black
 	set guifont=Menlo\ Regular:h12
 	set guioptions-=T " hide toolbar
 	set guioptions-=L "hide scrollbars
@@ -107,5 +120,6 @@ if has('gui_running')
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
 	set background=light
+	colorscheme ir_black
 endif
 
