@@ -25,6 +25,8 @@ set softtabstop=4
 set noexpandtab
 set scrolloff=4 "keep 4 lines when scrolling
 set nofoldenable "dont fold by default
+set foldmethod=indent
+set foldlevel=99
 set laststatus=2 "alwasy show status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set listchars=tab:▸\ ,eol:¬ "invisible chars
@@ -53,10 +55,6 @@ autocmd BufReadPost *
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-let python_highlight_all = 1
-let python_highlight_indent_errors = 1
-let python_highlight_space_errors = 0
-
 
 "Key mpapping
 let mapleader = ","
@@ -76,6 +74,11 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 ",i to toggle show invisibiles
 nnoremap <leader>i :set list!<CR>
+" Ctrl-movement to move between splits
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
@@ -88,7 +91,7 @@ nnoremap <leader>i :set list!<CR>
 
 colorscheme ir_black
 if has('gui_running')
-"	set background=dark
+	set background=dark
 	set guifont=Menlo\ Regular:h12
 	set guioptions-=T " hide toolbar
 	set guioptions-=L "hide scrollbars
