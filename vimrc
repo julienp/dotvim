@@ -59,8 +59,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 "Key mpapping
 let mapleader = ","
 "\v in search makes vim use normal regexp
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 nnoremap ; :
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
@@ -105,9 +105,6 @@ if has('gui_running')
 	set columns=110 "initial screensize
 	set cursorline "hightlight current line
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
-	highlig Visual guifg=NONE guibg=darkgray
-	highlight NonText guifg=#4a4a59
-	highlight SpecialKey guifg=#4a4a59
 else
 	set background=light
 endif
