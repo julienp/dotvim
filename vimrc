@@ -52,9 +52,9 @@ autocmd BufReadPost *
 			\ endif |
 			\ endif
 
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-autocmd FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 "Key mpapping
 let mapleader = ","
