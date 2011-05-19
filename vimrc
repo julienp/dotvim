@@ -58,6 +58,9 @@ autocmd FileType python setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+"save and load folds
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 
 function! <SID>StripTrailingWhitespaces()
 	" Preparation: save last search, and cursor position.
