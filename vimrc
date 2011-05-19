@@ -72,6 +72,10 @@ inoremap <C-Space> <C-x><C-o>
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 ",W to remove all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+",d to toggle NERDTree
+nnoremap <leader>d :NERDTreeToggle<CR>
+",i to toggle show invisibiles
+nnoremap <leader>i :set list!<CR>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
