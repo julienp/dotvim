@@ -88,6 +88,8 @@ inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 nnoremap <leader>W :call <SID>StripTrailingWhitespaces()<CR>
 ",d to toggle NERDTree
 nnoremap <leader>d :NERDTreeToggle<CR>
+",D to open a new NERDTree, useful to change CWD
+nnoremap <leader>D :NERDTree<CR>
 ",i to toggle show invisibiles
 nnoremap <leader>i :set list!<CR>
 " Ctrl-movement to move between splits
@@ -95,6 +97,8 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+",e to edit file with path of currently open prefilled
+map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
@@ -104,6 +108,7 @@ map <c-h> <c-w>h
 "	map <D-t> :CommandT<CR>
 "endif
 
+let NERDTreeWinSize=25
 
 if has('gui_running')
 	set background=dark
