@@ -37,7 +37,7 @@ set novisualbell
 set wildmenu "command line completion
 set wildignore=*.pyc,*.class "ignore these file extensions
 set wildmode=full
-set completeopt=menu "only show the omnicompletemenu, no docstring buffer
+set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffer
 set nobackup
 set mouse=a "enable mouse in terminal
 set showcmd "show command in the last line of the screen
@@ -68,6 +68,9 @@ nnoremap <leader><space> :noh<cr>
 inoremap <C-Space> <C-x><C-o>
 "esc to close omnimenu
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+"jk movmenet keys in omnibox, sort of conflicts with completeopt longest
+"inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 ",W to remove all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 ",d to toggle NERDTree
