@@ -82,7 +82,8 @@ let mapleader = ","
 nnoremap ; :
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
-"omnicomplete ctrl-space
+"omnicomplete ctrl-space, Nul works in Terminal.app, C-Space in MacVim
+inoremap <Nul> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
 "esc to close omnimenu
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
