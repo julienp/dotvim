@@ -116,8 +116,8 @@ map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 let NERDTreeWinSize=25
 
 if has('gui_running')
-	set background=dark
 	colorscheme ir_black
+	set background=dark
 	set guifont=Menlo\ Regular:h12
 	set guioptions-=T " hide toolbar
 	set guioptions-=L "hide scrollbars
@@ -129,7 +129,7 @@ if has('gui_running')
 	set cursorline "hightlight current line
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
+	colorscheme koehler
 	set background=light
-	colorscheme ir_black
 endif
 
