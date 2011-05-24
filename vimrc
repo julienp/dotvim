@@ -54,7 +54,6 @@ autocmd BufReadPost *
 			\ endif |
 			\ endif
 
-autocmd FileType python setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
@@ -130,6 +129,7 @@ if has('gui_running')
 	set cursorline "hightlight current line
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
+	set nocursorline
 	colorscheme koehler
 	set background=light
 endif
