@@ -11,7 +11,7 @@ set ttyfast
 set backspace=indent,eol,start
 set autoindent " Auto indenting
 set history=100 " keep 100 lines of history
-set viminfo='20,\"200 " keep a .viminfo file
+"set viminfo=h,'20,\"200 " keep a .viminfo file
 set ruler " show the cursor position
 set hidden " dont require saving before switching buffera
 set hlsearch " highlight the last searched term
@@ -43,6 +43,7 @@ set mouse=a "enable mouse in terminal
 set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪ "show at the beginning of wrapped lines
+set viewoptions=folds "only store fold information in views
 
 syntax on " syntax highlighting
 
@@ -131,8 +132,8 @@ if has('gui_running')
 	set cursorline "hightlight current line
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
-	set nocursorline
 	colorscheme koehler
 	set background=light
+	set nocursorline
 endif
 
