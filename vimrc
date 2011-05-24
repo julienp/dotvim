@@ -86,6 +86,8 @@ inoremap <Nul> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
 "esc to close omnimenu
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+"enter to select an item from the menu
+inoremap <expr> <CR>	   pumvisible() ? "\<C-y>" : "\<CR>"
 "jk movmenet keys in omnibox, sort of conflicts with completeopt longest
 "inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 "inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
