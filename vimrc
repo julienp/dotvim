@@ -107,6 +107,11 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 ",e to edit file with path of currently open prefilled
 map <leader>e :e <C-R>=expand('%:h').'/'<CR>
+"make arrow keys work in Terminal.app in insertmode
+imap [A <up>
+imap [B <down>
+imap [5C <right>
+imap [5D <left>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
