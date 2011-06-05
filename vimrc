@@ -74,6 +74,10 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfunction
 
+"closetag, doesn't seem to play nicely with pathogen
+let g:closetag_html_style=1
+autocmd Filetype html source ~/.vim/bundle/closetag/scripts/closetag.vim
+
 "Key mpapping
 let mapleader = ","
 "\v in search makes vim use normal regexp
