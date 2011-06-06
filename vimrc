@@ -35,7 +35,7 @@ set showmatch "show matching brackets
 set noerrorbells "dont beep!
 set novisualbell
 set wildmenu "command line completion
-set wildignore=*.pyc,*.class "ignore these file extensions
+set wildignore=*.pyc,*.class,_build "ignore these file extensions
 set wildmode=full
 set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffer
 set nobackup
