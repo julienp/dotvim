@@ -23,7 +23,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
-set scrolloff=4 "keep 4 lines when scrolling
+"set scrolloff=4 "keep 4 lines when scrolling
 set nofoldenable "dont fold by default
 set foldmethod=indent
 set foldlevel=99
@@ -38,6 +38,7 @@ set wildmenu "command line completion
 set wildignore=*.pyc,*.class,_build "ignore these file extensions
 set wildmode=full
 set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffer
+set pumheight=15 "limit completion menu height
 set nobackup
 set mouse=a "enable mouse in terminal
 set showcmd "show command in the last line of the screen
@@ -57,6 +58,18 @@ syntax on " syntax highlighting
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
+autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
+autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
+
+let g:clang_complete_copen=1
+"let g:clang_periodic_quickfix=1
+
+"quickfix window minimum height 3, max 10, autoadjusts to number of errors
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 
 "save and load folds
 autocmd BufWinLeave *.* mkview
