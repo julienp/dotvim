@@ -43,17 +43,17 @@ set mouse=a "enable mouse in terminal
 set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪ "show at the beginning of wrapped lines
-set viewoptions=folds "only store fold information in views
+set viewoptions=folds,cursor "only store fold information in views
 
 syntax on " syntax highlighting
 
 " When editing a file, always jump to the last cursor position
-autocmd BufReadPost *
-			\ if ! exists("g:leave_my_cursor_position_alone") |
-			\ if line("'\"") > 0 && line ("'\"") <= line("$") |
-			\ exe "normal g'\"" |
-			\ endif |
-			\ endif
+"autocmd BufReadPost *
+			"\ if ! exists("g:leave_my_cursor_position_alone") |
+			"\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+			"\ exe "normal g'\"" |
+			"\ endif |
+			"\ endif
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
