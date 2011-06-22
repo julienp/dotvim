@@ -141,8 +141,9 @@ imap [5D <left>
 let NERDTreeWinSize=25
 
 if has('gui_running')
-	colorscheme ir_black
-	set background=dark
+	set background=light
+	"let g:solarized_contrast="high"
+	colorscheme solarized
 	set guifont=Menlo\ Regular:h12
 	set guioptions-=T " hide toolbar
 	set guioptions-=L "hide scrollbars
