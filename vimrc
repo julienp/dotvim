@@ -22,6 +22,8 @@ set undofile
 set undodir=/tmp
 set history=100 " keep 100 lines of history
 set viminfo='10,:20,\"100,%,n~/.viminfo
+"store cursor position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "ui
 set ruler " show the cursor position
@@ -34,11 +36,7 @@ set novisualbell
 set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪ "show at the beginning of wrapped lines
-set showmatch "show matching brackets
-set viewoptions=folds,cursor
 set mouse=a "enable mouse in terminal
-
-"scrolling
 
 "search
 set hlsearch " highlight the last searched term
@@ -49,18 +47,15 @@ set gdefault "global search/replace
 
 "indentation
 set autoindent " Auto indenting
-set nofoldenable "dont fold by default
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
 
 "foldint
+set nofoldenable "dont fold by default
 set foldmethod=indent
 set foldlevel=99
-"save and load folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
 
 "completion
 set wildmenu "command line completion
@@ -70,8 +65,8 @@ set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffe
 set pumheight=15 "limit completion menu height
 set ofu=syntaxcomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabCrMapping = 1
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabCrMapping=1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
@@ -79,6 +74,8 @@ let python_highlight_all=1
 
 autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
+
+autocmd FileType php setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 
 let g:clang_complete_copen=1
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
@@ -101,7 +98,7 @@ endfunction
 
 "closetag, doesn't seem to play nicely with pathogen
 let g:closetag_html_style=1
-autocmd Filetype html source ~/.vim/bundle/closetag/scripts/closetag.vim
+autocmd Filetype html,php source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 "delimitMate
 let delimitMate_smart_quotes = 1
@@ -135,10 +132,10 @@ nnoremap <leader>i :set list!<CR>
 ",n to toggle linenumbers
 nnoremap <leader>n :set number! number?<cr>
 " Ctrl-movement to move between splits
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+"map <c-j> <c-w>j
+"map <c-k> <c-w>k
+"map <c-l> <c-w>l
+"map <c-h> <c-w>h
 ",e to edit file with path of currently open prefilled
 map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 "make arrow keys work in Terminal.app in insertmode
