@@ -37,15 +37,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "vim-snipmate"]
-	path = vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "bundle/vim-addon-utils"]
-	path = bundle/vim-addon-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/snipmate-snippets"]
-	path = bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
+[submodule "bundle/rope-omni"]
+	path = bundle/rope-omni
+	url = https://github.com/rygwdn/rope-omni.git

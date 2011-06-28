@@ -61,7 +61,6 @@ set foldlevel=99
 "save and load folds
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
-autocmd	BufRead *.* silent loadview
 
 "completion
 set wildmenu "command line completion
@@ -75,8 +74,8 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabCrMapping = 1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-let python_highlight_all = 1
+autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+let python_highlight_all=1
 
 autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
