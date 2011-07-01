@@ -4,4 +4,6 @@ import ropevim
 EOF
 endfunction
 
+if ('has_gui')
 call LoadRope()
+endif

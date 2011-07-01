@@ -65,7 +65,8 @@ set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffe
 set pumheight=15 "limit completion menu height
 set ofu=syntaxcomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabCrMapping=1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
