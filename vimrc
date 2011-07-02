@@ -72,6 +72,7 @@ let g:SuperTabCrMapping=1
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
 let python_highlight_all=1
+let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
 
 autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
