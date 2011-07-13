@@ -153,6 +153,8 @@ vnoremap >           >gv
 " cycle through buffers with C-j and C-k
 nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
+",a for search/replace
+nnoremap <leader>s :%s///g<left><left><left>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
