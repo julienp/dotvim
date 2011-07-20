@@ -10,16 +10,16 @@ syntax on
 set encoding=utf-8
 set ttyfast
 set backspace=indent,eol,start
-set hidden " dont require saving before switching buffera
+set hidden "dont require saving before switching buffers
 set modeline
 set nostartofline
 set nobackup
 set noswapfile
-set undofile
+set undofile "persistent undo
 set undodir=/tmp
-set history=100 " keep 100 lines of history
+set history=100 "keep 100 lines of history
 set viminfo='10,:20,\"100,%,n~/.viminfo
-"store cursor position
+"restore cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "ui
@@ -49,7 +49,7 @@ set shiftwidth=4
 set softtabstop=4
 set noexpandtab
 
-"foldint
+"folding
 set nofoldenable "dont fold by default
 set foldmethod=indent
 set foldlevel=99
@@ -73,10 +73,14 @@ let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with 
 
 autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
+let g:clang_complete_copen=1
 
 autocmd FileType php setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 
-let g:clang_complete_copen=1
+"closetag, doesn't seem to play nicely with pathogen
+let g:closetag_html_style=1
+autocmd Filetype html,php source ~/.vim/bundle/closetag/scripts/closetag.vim
+
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
@@ -94,10 +98,6 @@ function! <SID>StripTrailingWhitespaces()
 	let @/=_s
 	call cursor(l, c)
 endfunction
-
-"closetag, doesn't seem to play nicely with pathogen
-let g:closetag_html_style=1
-autocmd Filetype html,php source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 "delimitMate
 let delimitMate_smart_quotes = 1
