@@ -81,6 +81,11 @@ autocmd FileType php setlocal autoindent tabstop=4 expandtab shiftwidth=4 softta
 let g:closetag_html_style=1
 autocmd Filetype html,php source ~/.vim/bundle/closetag/scripts/closetag.vim
 
+"generated ctags for stdlib
+autocmd FileType c setlocal tags+=~/Projects/c/stdlib_tags
+
+source ~/.vim/bundle/autotag/autotag.vim
+
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
@@ -178,8 +183,8 @@ if has('gui_running')
 	set cursorline "hightlight current line
 	set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
-	colorscheme koehler
-	set background=light
+	set background=dark
+	colorscheme solarized
 	set nocursorline
 endif
 
