@@ -34,6 +34,7 @@ set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪ "show at the beginning of wrapped lines
 set mouse=a "enable mouse in terminal
+set guicursor+=a:blinkon0 "no cursor blinking
 
 "search
 set hlsearch " highlight the last searched term
