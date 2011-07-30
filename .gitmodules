@@ -43,3 +43,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim
+[submodule "bundle/bufkill.vim"]
+	path = bundle/bufkill.vim
+	url = https://github.com/vim-scripts/bufkill.vim.git
