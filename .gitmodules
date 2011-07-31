@@ -46,3 +46,9 @@
 [submodule "bundle/bufkill.vim"]
 	path = bundle/bufkill.vim
 	url = https://github.com/vim-scripts/bufkill.vim.git
+[submodule "bundle/vim-makegreen"]
+	path = bundle/vim-makegreen
+	url = git://github.com/reinh/vim-makegreen
+[submodule "bundle/vim-nosecompiler"]
+	path = bundle/vim-nosecompiler
+	url = https://github.com/olethanh/Vim-nosecompiler.git
