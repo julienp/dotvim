@@ -176,10 +176,10 @@ nnoremap <leader>s :%s///g<left><left><left>
 
 let NERDTreeWinSize=25
 
+set background=light
+colorscheme solarized
+
 if has('gui_running')
-	set background=light
-	"let g:solarized_contrast="high"
-	colorscheme solarized
 	set guifont=Menlo\ Regular:h12
 	set guioptions-=T " hide toolbar
 	set guioptions-=L "hide scrollbars
