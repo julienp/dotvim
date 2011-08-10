@@ -47,7 +47,7 @@ set autoindent " Auto indenting
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab
+set expandtab
 
 "folding
 set nofoldenable "dont fold by default
@@ -72,11 +72,8 @@ let python_highlight_all=1
 let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
 autocmd FileType python compiler nose
 
-autocmd FileType c setlocal autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
 let g:clang_complete_copen=1
-
-autocmd FileType php setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 
 "closetag, doesn't seem to play nicely with pathogen
 let g:closetag_html_style=1
