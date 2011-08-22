@@ -112,6 +112,11 @@ endfunction
 "delimitMate
 let delimitMate_smart_quotes = 1
 
+"tagbar
+let g:tagbar_expand = 1
+let g:tagbar_singleclick = 1
+let g:tagbar_usearrows = 1
+
 "Key mpapping
 let mapleader = ","
 "\v in search makes vim use normal regexp
@@ -162,6 +167,8 @@ nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
 ",a for search/replace
 nnoremap <leader>s :%s///g<left><left><left>
+"tabar
+nnoremap <leader>l :TagbarToggle<CR>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
