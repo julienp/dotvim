@@ -165,7 +165,7 @@ vnoremap >           >gv
 " cycle through buffers with C-j and C-k
 nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
-",a for search/replace
+",s for search/replace
 nnoremap <leader>s :%s///g<left><left><left>
 "tabar
 nnoremap <leader>l :TagbarToggle<CR>
