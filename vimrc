@@ -91,6 +91,9 @@ nmap K :Man <cword><CR>
 "autotag
 source ~/.vim/bundle/autotag/autotag.vim
 
+"% matches if/else
+runtime macros/matchit.vim
+
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
