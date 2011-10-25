@@ -148,6 +148,8 @@ nnoremap <leader>D :NERDTree<CR>
 nnoremap <leader>i :set list!<CR>
 ",n to toggle linenumbers
 nnoremap <leader>n :set number! number?<cr>
+",a to Ack the word under the cursor
+nnoremap <leader>a :Ack <cword><CR>
 " Ctrl-movement to move between splits
 "map <c-j> <c-w>j
 "map <c-k> <c-w>k
