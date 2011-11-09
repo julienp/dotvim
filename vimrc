@@ -87,7 +87,6 @@ autocmd FileType c setlocal tags+=~/Projects/c/stdlib_tags
 runtime! ftplugin/man.vim
 nmap K :Man <cword><CR>
 
-
 "autotag
 source ~/.vim/bundle/autotag/autotag.vim
 
