@@ -78,10 +78,6 @@ autocmd FileType python compiler nose
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
 let g:clang_complete_copen=1
 
-"closetag, doesn't seem to play nicely with pathogen
-let g:closetag_html_style=1
-autocmd Filetype html,php source ~/.vim/bundle/closetag/scripts/closetag.vim
-
 "generated ctags for stdlib
 autocmd FileType c setlocal tags+=~/Projects/c/stdlib_tags
 
