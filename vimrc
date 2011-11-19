@@ -97,6 +97,7 @@ au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+au Filetype qf setlocal nolist nocursorline nowrap
 
 function! <SID>StripTrailingWhitespaces()
 	" Preparation: save last search, and cursor position.
