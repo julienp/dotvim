@@ -8,6 +8,7 @@ filetype indent on
 syntax on
 
 set encoding=utf-8
+set autoread
 set ttyfast
 set backspace=indent,eol,start
 set hidden "dont require saving before switching buffers
