@@ -58,3 +58,6 @@
 [submodule "bundle/jslint"]
 	path = bundle/jslint
 	url = https://github.com/othree/jslint.vim
+[submodule "bundle/vim-pydoc"]
+	path = bundle/vim-pydoc
+	url = https://github.com/fs111/pydoc.vim

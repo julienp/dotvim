@@ -68,7 +68,9 @@ let g:SuperTabCrMapping=1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+let ropevim_guess_project=1
 let python_highlight_all=1
+let g:pydoc_highlight=0
 let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
 autocmd FileType python compiler nose
 
