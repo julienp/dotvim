@@ -172,6 +172,7 @@ nnoremap <C-k> :bn<cr>
 nnoremap <leader>s :%s///g<left><left><left>
 "tabar
 nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>ro :call RopeOrganizeImports()<CR>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
