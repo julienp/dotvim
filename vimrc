@@ -86,6 +86,9 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+"autocmd FileType html source /usr/local/Cellar/vim/7.3.102/share/vim/vim73/macros/matchit.vim
+"let loaded_matchit = 1
+
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
 let g:clang_complete_copen=1
 
