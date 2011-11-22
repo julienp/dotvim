@@ -74,6 +74,17 @@ let python_highlight_all=1
 let g:pydoc_highlight=0
 let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
 autocmd FileType python compiler nose
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
 let g:clang_complete_copen=1
