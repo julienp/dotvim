@@ -69,7 +69,6 @@ let g:SuperTabCrMapping=1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
-let ropevim_guess_project=1
 let python_highlight_all=1
 let g:pydoc_highlight=0
 let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
@@ -187,6 +186,7 @@ nnoremap <leader>s :%s///g<left><left><left>
 "tabar
 nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>ro :call RopeOrganizeImports()<CR>
+nnoremap <leader>g :call RopeGotoDefinition()<CR>
 
 "unmap ⌘-t, then map it to command-t plugin
 "this needs to be in .gvimrc, as the system macvim gvimrc is loaded after the
