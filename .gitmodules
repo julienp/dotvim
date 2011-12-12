@@ -16,15 +16,6 @@
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
 	url = https://github.com/tpope/vim-git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-mac-classic-theme"]
-	path = bundle/vim-mac-classic-theme
-	url = https://github.com/nelstrom/vim-mac-classic-theme
-[submodule "bundle/clang_complete"]
-	path = bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab
@@ -37,9 +28,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim
-[submodule "bundle/bufkill.vim"]
-	path = bundle/bufkill.vim
-	url = https://github.com/vim-scripts/bufkill.vim.git
 [submodule "bundle/vim-makegreen"]
 	path = bundle/vim-makegreen
 	url = git://github.com/reinh/vim-makegreen

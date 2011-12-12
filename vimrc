@@ -1,6 +1,7 @@
 set nocompatible " Use Vim defaults
 
 call pathogen#infect()
+call pathogen#helptags()
 
 filetype on
 filetype plugin on
@@ -34,14 +35,12 @@ set novisualbell
 set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪ "show at the beginning of wrapped lines
-set mouse=a "enable mouse in terminal
 
 "search
 set hlsearch " highlight the last searched term
 set incsearch "find as you type
 set ignorecase "http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set smartcase
-set gdefault "global search/replace
 
 "indentation
 set autoindent " Auto indenting
@@ -85,15 +84,6 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-"autocmd FileType html source /usr/local/Cellar/vim/7.3.102/share/vim/vim73/macros/matchit.vim
-"let loaded_matchit = 1
-
-autocmd BufWritePost,FileWritePost *.c,*.h silent call g:ClangUpdateQuickFix()
-let g:clang_complete_copen=1
-
-"generated ctags for stdlib
-autocmd FileType c setlocal tags+=~/Projects/c/stdlib_tags
-
 "awesome manpages
 "see note [1] at http://crumbtrail.chesmart.in/post/5024677985/man-vim-dude
 runtime! ftplugin/man.vim
@@ -123,49 +113,24 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfunction
 
-"delimitMate
-let delimitMate_smart_quotes = 1
-
 "tagbar
 let g:tagbar_expand = 1
 let g:tagbar_singleclick = 1
 let g:tagbar_usearrows = 1
 
-"Key mpapping
 let mapleader = ","
-"\v in search makes vim use normal regexp
-"nnoremap / /\v
-"vnoremap / /\v
+nnoremap <leader><leader> <c-^>
 nnoremap ; :
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
-"omnicomplete ctrl-space, Nul works in Terminal.app, C-Space in MacVim
-"inoremap <Nul> <C-x><C-o>
-"inoremap <C-Space> <C-x><C-o>
-"esc to close omnimenu
-"inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-"enter to select an item from the menu
-"inoremap <expr> <CR>	   pumvisible() ? "\<C-y>" : "\<CR>"
-"jk movmenet keys in omnibox, sort of conflicts with completeopt longest
-"inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-"inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 ",W to remove all trailing whitespace
 nnoremap <leader>W :call <SID>StripTrailingWhitespaces()<CR>
-",d to toggle NERDTree
-nnoremap <leader>d :NERDTreeToggle<CR>
-",D to open a new NERDTree, useful to change CWD
-nnoremap <leader>D :NERDTree<CR>
 ",i to toggle show invisibiles
 nnoremap <leader>i :set list!<CR>
 ",n to toggle linenumbers
 nnoremap <leader>n :set number! number?<cr>
 ",a to Ack the word under the cursor
 nnoremap <leader>a :Ack <cword><CR>
-" Ctrl-movement to move between splits
-"map <c-j> <c-w>j
-"map <c-k> <c-w>k
-"map <c-l> <c-w>l
-"map <c-h> <c-w>h
 ",e to edit file with path of currently open prefilled
 map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 "make arrow keys work in Terminal.app in insertmode
@@ -173,7 +138,7 @@ imap [A <up>
 imap [B <down>
 imap [5C <right>
 imap [5D <left>
-" Indent using tabs (while in visual mode)
+"Indent using tabs (while in visual mode)
 vnoremap <tab>       >gv
 vnoremap <s-tab>     <gv
 vnoremap <           <gv
@@ -183,7 +148,6 @@ nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
 ",s for search/replace
 nnoremap <leader>s :%s///g<left><left><left>
-"tabar
 nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>ro :call RopeOrganizeImports()<CR>
 nnoremap <leader>g :call RopeGotoDefinition()<CR>
@@ -195,8 +159,6 @@ nnoremap <leader>g :call RopeGotoDefinition()<CR>
 "	macmenu &File.New\ Tab key=<nop>
 "	map <D-t> :CommandT<CR>
 "endif
-
-let NERDTreeWinSize=25
 
 set background=light
 colorscheme solarized
