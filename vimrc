@@ -102,15 +102,15 @@ endfunction
 au Filetype qf setlocal nolist nocursorline nowrap
 
 function! <SID>StripTrailingWhitespaces()
-	" Preparation: save last search, and cursor position.
-	let _s=@/
-	let l = line(".")
-	let c = col(".")
-	" Do the business:
-	%s/\s\+$//e
-	" Clean up: restore previous search history, and cursor position
-	let @/=_s
-	call cursor(l, c)
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
 
 "tagbar
@@ -119,6 +119,7 @@ let g:tagbar_singleclick = 1
 let g:tagbar_usearrows = 1
 
 let mapleader = ","
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 nnoremap <leader><leader> <c-^>
 nnoremap ; :
 ",space to clear search
@@ -164,17 +165,18 @@ set background=light
 colorscheme solarized
 
 if has('gui_running')
-	set guifont=Menlo\ Regular:h12
-	set guioptions-=T " hide toolbar
-	set guioptions-=L "hide scrollbars
-	set guioptions-=l "hide scrollbars
-	set guioptions-=R "hide scrollbars
-	set guioptions-=r "hide scrollbars
-	set guioptions-=b "hide scrollbars
-	set columns=110 "initial screensize
-	set cursorline "hightlight current line
-	set fuopt=maxvert,maxhorz "set max size for fullscreen
+    " set guifont=Menlo\ Regular:h12
+    set guifont=Inconsolata-dz:h12
+    set guioptions-=T " hide toolbar
+    set guioptions-=L "hide scrollbars
+    set guioptions-=l "hide scrollbars
+    set guioptions-=R "hide scrollbars
+    set guioptions-=r "hide scrollbars
+    set guioptions-=b "hide scrollbars
+    set columns=110 "initial screensize
+    set cursorline "hightlight current line
+    set fuopt=maxvert,maxhorz "set max size for fullscreen
 else
-	set nocursorline
+    set nocursorline
 endif
 
