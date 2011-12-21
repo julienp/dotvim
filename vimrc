@@ -34,7 +34,7 @@ set noerrorbells "dont beep!
 set novisualbell
 set showcmd "show command in the last line of the screen
 set wrap linebreak
-set showbreak=↪ "show at the beginning of wrapped lines
+set showbreak=↪\ "show at the beginning of wrapped lines
 
 "search
 set hlsearch " highlight the last searched term
