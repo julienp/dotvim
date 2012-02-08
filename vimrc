@@ -4,8 +4,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 syntax on
 
 set encoding=utf-8
@@ -27,7 +26,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "ui
 set ruler " show the cursor position
 set laststatus=2 "alwasy show status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%y%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set listchars=tab:▸\ ,eol:¬ "invisible chars
 set nolist "dont show invisible chars by default
 set noerrorbells "dont beep!
@@ -62,8 +61,8 @@ set completeopt=menu,longest "only show the omnicompletemenu, no docstring buffe
 set pumheight=15 "limit completion menu height
 set ofu=syntaxcomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabCrMapping=1
 
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
@@ -176,7 +175,5 @@ if has('gui_running')
     set columns=110 "initial screensize
     set cursorline "hightlight current line
     set fuopt=maxvert,maxhorz "set max size for fullscreen
-else
-    set nocursorline
 endif
 
