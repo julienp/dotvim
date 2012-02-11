@@ -134,10 +134,14 @@ nnoremap <leader>a :Ack <cword><CR>
 ",e to edit file with path of currently open prefilled
 map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 "make arrow keys work in Terminal.app in insertmode
-imap [A <up>
-imap [B <down>
-imap [5C <right>
-imap [5D <left>
+" imap [A <up>
+" imap [B <down>
+" imap [5C <right>
+" imap [5D <left>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 "Indent using tabs (while in visual mode)
 vnoremap <tab>       >gv
 vnoremap <s-tab>     <gv
