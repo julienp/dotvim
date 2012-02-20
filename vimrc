@@ -65,6 +65,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 " let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabCrMapping=1
 
+let g:clang_use_library=1
+let g:clang_complete_copen=1
+let g:clang_periodic_quickfix=1
+let g:clang_complete_auto=1
+
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
 let python_highlight_all=1
