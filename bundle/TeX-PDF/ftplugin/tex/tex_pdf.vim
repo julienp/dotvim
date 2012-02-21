@@ -245,7 +245,7 @@ function! <SID>ViewTexPdf(...)
         let l:target = a:1
     endif
     if has('mac')
-        silent execute "! open ".l:target
+        silent execute "! open -g -a Preview ".l:target
     elseif has('win32') || has ('win64')
         silent execute "! start ".l:target
     else

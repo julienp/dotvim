@@ -34,6 +34,7 @@ set novisualbell
 set showcmd "show command in the last line of the screen
 set wrap linebreak
 set showbreak=↪\ "show at the beginning of wrapped lines
+set shortmess=at
 
 "search
 set hlsearch " highlight the last searched term
@@ -122,6 +123,10 @@ let g:tagbar_expand = 1
 let g:tagbar_singleclick = 1
 let g:tagbar_usearrows = 1
 
+cmap w!! w !sudo tee % >/dev/null
+
+let g:yankring_history_dir = '/tmp'
+
 let mapleader = ","
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 nnoremap <leader><leader> <c-^>
@@ -138,6 +143,7 @@ nnoremap <leader>n :set number! number?<cr>
 nnoremap <leader>a :Ack <cword><CR>
 ",e to edit file with path of currently open prefilled
 map <leader>e :e <C-R>=expand('%:h').'/'<CR>
+map <leader>y :YRShow<CR>
 "make arrow keys work in Terminal.app in insertmode
 " imap [A <up>
 " imap [B <down>
