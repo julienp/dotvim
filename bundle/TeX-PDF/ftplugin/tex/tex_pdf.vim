@@ -197,7 +197,7 @@ function! <SID>BuildTexPdf(view_results, ...)
         endtry
         silent make
     else
-        let l:special_tex_compiler = "rubber"
+        let l:special_tex_compiler = "rubberDISABLED"
         if executable(l:special_tex_compiler)
             echon "compiling with Rubber ..."
             silent execute "setlocal makeprg=" . l:special_tex_compiler . "\\ -dfsq\\ %"
