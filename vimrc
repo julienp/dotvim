@@ -129,7 +129,7 @@ let g:yankring_history_dir = '/tmp'
 
 let mapleader = ","
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> ``
 nnoremap ; :
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
@@ -153,11 +153,8 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
-"Indent using tabs (while in visual mode)
-vnoremap <tab>       >gv
-vnoremap <s-tab>     <gv
-vnoremap <           <gv
-vnoremap >           >gv
+vnoremap < <gv
+vnoremap > >gv
 " cycle through buffers with C-j and C-k
 nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
