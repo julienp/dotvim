@@ -34,9 +34,6 @@
 [submodule "bundle/vim-ragtag"]
 	path = bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule "bundle/clang_complete"]
-	path = bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
@@ -49,3 +46,9 @@
 [submodule "bundle/neocomplcache-clang_complete"]
 	path = bundle/neocomplcache-clang_complete
 	url = https://github.com/Shougo/neocomplcache-clang_complete.git
+[submodule "bundle/neocomplcache-clang"]
+	path = bundle/neocomplcache-clang
+	url = https://github.com/Shougo/neocomplcache-clang.git
+[submodule "bundle/clang_complete"]
+	path = bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git

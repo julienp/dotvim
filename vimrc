@@ -1,7 +1,7 @@
 set nocompatible " Use Vim defaults
 
 call pathogen#infect()
-call pathogen#helptags()
+" call pathogen#helptags()
 
 filetype on
 filetype plugin indent on
@@ -72,7 +72,7 @@ endif
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
-let g:clang_complete_auto=1
+" let g:clang_complete_auto=1
 
 "python
 autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
@@ -96,6 +96,7 @@ EOF
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:neocomplcache_force_overwrite_completefunc=1
+let g:neocomplcache_clang_use_library = 1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " <CR>: close popup
