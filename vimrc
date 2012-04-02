@@ -1,7 +1,7 @@
 set nocompatible " Use Vim defaults
 
 call pathogen#infect()
-" call pathogen#helptags()
+call pathogen#helptags()
 
 filetype on
 filetype plugin indent on
@@ -24,7 +24,6 @@ set viminfo='10,:20,\"100,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 "ui
-set ruler " show the cursor position
 set laststatus=2 "alwasy show status line
 set statusline=%<%f\ %h%m%r%y%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set listchars=tab:▸\ ,eol:¬ "invisible chars
@@ -33,8 +32,7 @@ set noerrorbells "dont beep!
 set novisualbell
 set showcmd "show command in the last line of the screen
 set wrap linebreak
-set showbreak=↪\ "show at the beginning of wrapped lines
-set shortmess=at
+set showbreak=↪\  "show at the beginning of wrapped lines
 
 "search
 set hlsearch " highlight the last searched term
@@ -43,11 +41,12 @@ set ignorecase "http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set smartcase
 
 "indentation
-set autoindent " Auto indenting
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set shiftround
 
 "folding
 set nofoldenable "dont fold by default
@@ -58,9 +57,8 @@ set foldlevel=99
 set wildmenu "command line completion
 set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg "ignore these files
 set wildmode=full
-set completeopt=menu"only show the omnicompletemenu, no docstring buffer
+set completeopt=menu "only show the omnicompletemenu, no docstring buffer
 set pumheight=15 "limit completion menu height
-
 if has("autocmd") && exists("+omnifunc")
 autocmd Filetype *
 \	if &omnifunc == "" |
@@ -72,14 +70,10 @@ endif
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
-" let g:clang_complete_auto=1
 
 "python
-autocmd FileType python setlocal autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
 autocmd FileType python call LoadRope()
-let python_highlight_all=1
-let g:pydoc_highlight=0
-let g:pyflakes_use_quickfix=0 "don't use quickfix with pyflakes, conflicts with ack
+autocmd BufWritePost *.py call Flake8()
 " Add the virtualenv's site-packages to vim path
 py << EOF
 import os.path
@@ -162,14 +156,7 @@ nnoremap <leader>i :set list!<CR>
 nnoremap <leader>n :set number! number?<cr>
 ",a to Ack the word under the cursor
 nnoremap <leader>a :Ack <cword><CR>
-",e to edit file with path of currently open prefilled
-map <leader>e :e <C-R>=expand('%:h').'/'<CR>
 map <leader>y :YRShow<CR>
-"make arrow keys work in Terminal.app in insertmode
-" imap [A <up>
-" imap [B <down>
-" imap [5C <right>
-" imap [5D <left>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
@@ -181,7 +168,6 @@ nnoremap <C-j> :bp<cr>
 nnoremap <C-k> :bn<cr>
 ",s for search/replace
 nnoremap <leader>s :%s///g<left><left><left>
-nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>ro :call RopeOrganizeImports()<CR>
 nnoremap <leader>g :call RopeGotoDefinition()<CR>
 
@@ -193,12 +179,7 @@ colorscheme solarized
 if has('gui_running')
     " set guifont=Menlo\ Regular:h12
     set guifont=Inconsolata-dz:h12
-    set guioptions-=T " hide toolbar
-    set guioptions-=L "hide scrollbars
-    set guioptions-=l "hide scrollbars
-    set guioptions-=R "hide scrollbars
-    set guioptions-=r "hide scrollbars
-    set guioptions-=b "hide scrollbars
+    set guioptions="" " hide toolbars, menu
     set columns=110 "initial screensize
     set cursorline "hightlight current line
     set fuopt=maxvert,maxhorz "set max size for fullscreen
