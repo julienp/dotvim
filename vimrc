@@ -59,21 +59,18 @@ set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg "ignor
 set wildmode=full
 set completeopt=menu "only show the omnicompletemenu, no docstring buffer
 set pumheight=15 "limit completion menu height
-if has("autocmd") && exists("+omnifunc")
-autocmd Filetype *
-\	if &omnifunc == "" |
-\	 setlocal omnifunc=syntaxcomplete#Complete |
-\	endif
-endif
 
 "clang
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
 
+autocmd Filetype c call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+
 "python
 autocmd FileType python call LoadRope()
 autocmd BufWritePost *.py call Flake8()
+let g:flake8_ignore="E501"
 " Add the virtualenv's site-packages to vim path
 py << EOF
 import os.path
@@ -86,28 +83,7 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-"neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_disable_auto_complete = 1
-let g:neocomplcache_force_overwrite_completefunc=1
-let g:neocomplcache_clang_use_library = 1
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
-" <CR>: close popup
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<ESC>"
-function! s:check_back_space()"{{{
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
-endfunction"}}
+let g:SuperTabDefaultCompletionType = "context"
 
 "awesome manpages
 "see note [1] at http://crumbtrail.chesmart.in/post/5024677985/man-vim-dude
