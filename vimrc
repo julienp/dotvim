@@ -122,6 +122,7 @@ let mapleader = ","
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 nnoremap <leader><leader> ``
 nnoremap ; :
+nnoremap gl `.
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
 ",W to remove all trailing whitespace
