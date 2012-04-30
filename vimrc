@@ -55,7 +55,7 @@ set foldlevel=99
 
 "completion
 set wildmenu "command line completion
-set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg "ignore these files
+set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg,.git "ignore these files
 set wildmode=full
 set completeopt=menu "only show the omnicompletemenu, no docstring buffer
 set pumheight=15 "limit completion menu height
@@ -95,6 +95,8 @@ source ~/.vim/bundle/autotag/autotag.vim
 
 "jshint
 let g:jshint = 1
+
+let g:CommandTMaxDepth = 5000
 
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
