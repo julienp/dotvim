@@ -9,4 +9,4 @@ http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-patho
 
 Updating submodules:
 
-	git submodule foreach --recursive git pull
+    git submodule foreach git pull --rebase
