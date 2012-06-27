@@ -60,6 +60,22 @@ set wildmode=full
 set completeopt=menu "only show the omnicompletemenu, no docstring buffer
 set pumheight=15 "limit completion menu height
 
+"add .gitignore entries to wildignore
+let filename = '.gitignore'
+if filereadable(filename)
+    let igstring = ''
+    for oline in readfile(filename)
+        let line = substitute(oline, '\s|\n|\r', '', "g")
+        if line =~ '^#' | con | endif
+        if line == '' | con  | endif
+        if line =~ '^!' | con  | endif
+        if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
+        let igstring .= "," . line
+    endfor
+    let execstring = "set wildignore+=".substitute(igstring, '^,', '', "g")
+    execute execstring
+endif
+
 "clang
 let g:clang_use_library=1
 let g:clang_complete_copen=1
