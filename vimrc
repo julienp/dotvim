@@ -20,6 +20,7 @@ set undofile "persistent undo
 set undodir=/tmp
 set history=100 "keep 100 lines of history
 set viminfo='10,:20,\"100,n~/.viminfo
+set timeout timeoutlen=1000 ttimeoutlen=100 "http://ksjoberg.com/vim-esckeys.html"
 "restore cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -173,7 +174,8 @@ colorscheme solarized
 
 if has('gui_running')
     " set guifont=Menlo\ Regular:h12
-    set guifont=Inconsolata-dz:h12
+    " set guifont=Inconsolata-dz:h12
+    set guifont=Inconsolata\ for\ Powerline:h14
     set guioptions="" " hide toolbars, menu
     set columns=110 "initial screensize
     set cursorline "hightlight current line
