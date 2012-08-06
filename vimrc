@@ -175,7 +175,8 @@ colorscheme solarized
 if has('gui_running')
     " set guifont=Menlo\ Regular:h12
     " set guifont=Inconsolata-dz:h12
-    set guifont=Inconsolata\ for\ Powerline:h14
+    " set guifont=Inconsolata\ for\ Powerline:h14
+    set guifont=Inconsolata:h14
     set guioptions="" " hide toolbars, menu
     set columns=110 "initial screensize
     set cursorline "hightlight current line
