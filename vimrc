@@ -82,7 +82,7 @@ let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
 
-autocmd Filetype c call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+autocmd Filetype objc,c call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 
 "python
 autocmd FileType python call LoadRope()
@@ -166,6 +166,9 @@ nnoremap <C-k> :bn<cr>
 nnoremap <leader>s :%s///g<left><left><left>
 nnoremap <leader>ro :call RopeOrganizeImports()<CR>
 nnoremap <leader>g :call RopeGotoDefinition()<CR>
+"Java/eclim
+nnoremap <leader>c :JavaCorrect<cr>
+
 
 cmap w!! w !sudo tee % >/dev/null
 
