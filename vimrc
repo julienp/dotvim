@@ -58,7 +58,7 @@ set foldlevel=99
 set wildmenu "command line completion
 set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg,.git "ignore these files
 set wildmode=full
-set completeopt=menu "only show the omnicompletemenu, no docstring buffer
+set completeopt=longest,menu
 set pumheight=15 "limit completion menu height
 
 "add .gitignore entries to wildignore
