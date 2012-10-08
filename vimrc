@@ -81,6 +81,7 @@ endif
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 autocmd Filetype objc,c call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 autocmd BufWritePost *.c call g:ClangUpdateQuickFix()
