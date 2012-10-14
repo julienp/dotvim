@@ -168,9 +168,6 @@ nnoremap <C-k> :bn<cr>
 nnoremap <leader>s :%s///g<left><left><left>
 nnoremap <leader>ro :call RopeOrganizeImports()<CR>
 nnoremap <leader>g :call RopeGotoDefinition()<CR>
-"Java/eclim
-nnoremap <leader>c :JavaCorrect<cr>
-
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -182,6 +179,7 @@ if has('gui_running')
     " set guifont=Inconsolata-dz:h12
     " set guifont=Inconsolata\ for\ Powerline:h14
     set guifont=Inconsolata:h14
+    " set guifont=Source\ Code\ Pro\:h12
     set guioptions="" " hide toolbars, menu
     set columns=110 "initial screensize
     set cursorline "hightlight current line
