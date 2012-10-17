@@ -115,7 +115,9 @@ source ~/.vim/bundle/autotag/autotag.vim
 "jshint
 let g:jshint = 1
 
-let g:CommandTMaxDepth = 5000
+"ctrlp
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_max_depth = 10
 
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
@@ -136,12 +138,13 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+"
 "yankring
 let g:yankring_history_dir = '/tmp'
 
 let mapleader = ","
-map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 nnoremap <leader><leader> ``
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap ; :
 nnoremap gl `.
 ",space to clear search
