@@ -146,7 +146,6 @@ let mapleader = ","
 nnoremap <leader><leader> ``
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap ; :
-nnoremap gl `.
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
 ",W to remove all trailing whitespace
