@@ -56,26 +56,10 @@ set foldlevel=99
 
 "completion
 set wildmenu "command line completion
-set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg,.git "ignore these files
+set wildignore=*.o,.DS_STORE,*.obj,*.pyc,*.class,_build,*.aux,*.bbl,*.blg,*/.git/*,*/.svn/*,"ignore these files
 set wildmode=full
 set completeopt=longest,menu
 set pumheight=15 "limit completion menu height
-
-"add .gitignore entries to wildignore
-let filename = '.gitignore'
-if filereadable(filename)
-    let igstring = ''
-    for oline in readfile(filename)
-        let line = substitute(oline, '\s|\n|\r', '', "g")
-        if line =~ '^#' | con | endif
-        if line == '' | con  | endif
-        if line =~ '^!' | con  | endif
-        if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
-        let igstring .= "," . line
-    endfor
-    let execstring = "set wildignore+=".substitute(igstring, '^,', '', "g")
-    execute execstring
-endif
 
 "clang
 let g:clang_use_library=1
@@ -118,6 +102,7 @@ let g:jshint = 1
 "ctrlp
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_max_depth = 10
+let g:ctrlp_show_hidden = 1
 
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
