@@ -67,8 +67,14 @@ let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-autocmd Filetype objc,c call SuperTabSetDefaultCompletionType("<c-x><c-o>")
-autocmd BufWritePost *.c call g:ClangUpdateQuickFix()
+autocmd Filetype objc,c,objcpp call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+autocmd BufWritePost *.c,*.m,*.h call g:ClangUpdateQuickFix()
+autocmd BufRead,BufNewFile *.m setfiletype objc
+
+"objc
+"https://github.com/b4winckler/vim-objc/blob/master/ftplugin/objc.vim
+"Search for include files inside frameworks (used for gf etc.)
+autocmd Filetype objc,objcpp setlocal includeexpr=substitute(v:fname,'\\([^/]\\+\\)/\\(.\\+\\)','/System/Library/Frameworks/\\1.framework/Headers/\\2','')
 
 "python
 autocmd FileType python call LoadRope()
@@ -103,6 +109,10 @@ let g:jshint = 1
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_max_depth = 10
 let g:ctrlp_show_hidden = 1
+
+"a.vim
+let g:alternateExtensions_m = "h"
+let g:alternateExtensions_h = "m"
 
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
