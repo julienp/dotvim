@@ -114,6 +114,9 @@ let g:ctrlp_show_hidden = 1
 let g:alternateExtensions_m = "h"
 let g:alternateExtensions_h = "m"
 
+"TComment
+map <D-/> :TComment<cr>
+
 "quickfix window minimum height 3, max 10, autoadjusts to number of errors
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
@@ -138,7 +141,6 @@ endfunction
 let g:yankring_history_dir = '/tmp'
 
 let mapleader = ","
-nnoremap <leader><leader> ``
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap ; :
 ",space to clear search
@@ -151,7 +153,7 @@ nnoremap <leader>i :set list!<CR>
 nnoremap <leader>n :set number! number?<cr>
 ",a to Ack the word under the cursor
 nnoremap <leader>a :Ack <cword><CR>
-map <leader>y :YRShow<CR>
+nnoremap <leader>y :YRShow<CR>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
