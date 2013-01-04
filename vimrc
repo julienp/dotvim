@@ -76,21 +76,6 @@ autocmd BufRead,BufNewFile *.m setfiletype objc
 "Search for include files inside frameworks (used for gf etc.)
 autocmd Filetype objc,objcpp setlocal includeexpr=substitute(v:fname,'\\([^/]\\+\\)/\\(.\\+\\)','/System/Library/Frameworks/\\1.framework/Headers/\\2','')
 
-"python
-autocmd FileType python call LoadRope()
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_ignore="E501"
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 let g:SuperTabDefaultCompletionType = "context"
 
