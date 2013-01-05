@@ -127,7 +127,6 @@ let g:yankring_history_dir = '/tmp'
 
 let mapleader = ","
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap ; :
 ",space to clear search
 nnoremap <leader><space> :noh<cr>
 ",W to remove all trailing whitespace
