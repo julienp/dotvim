@@ -69,7 +69,7 @@ let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchain
 
 autocmd Filetype objc,c,objcpp call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 autocmd BufWritePost *.c,*.m,*.h call g:ClangUpdateQuickFix()
-autocmd BufRead,BufNewFile *.m setfiletype objc
+autocmd BufRead,BufNewFile *.m set filetype=objc
 
 "objc
 "https://github.com/b4winckler/vim-objc/blob/master/ftplugin/objc.vim
