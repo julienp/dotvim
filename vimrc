@@ -76,6 +76,8 @@ autocmd BufRead,BufNewFile *.m set filetype=objc
 "Search for include files inside frameworks (used for gf etc.)
 autocmd Filetype objc,objcpp setlocal includeexpr=substitute(v:fname,'\\([^/]\\+\\)/\\(.\\+\\)','/System/Library/Frameworks/\\1.framework/Headers/\\2','')
 
+"python
+let g:pymode_lint_ignore = "E128,E122,E261,E501"
 
 let g:SuperTabDefaultCompletionType = "context"
 
