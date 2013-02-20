@@ -78,6 +78,7 @@ autocmd Filetype objc,objcpp setlocal includeexpr=substitute(v:fname,'\\([^/]\\+
 
 "python
 let g:pymode_lint_ignore = "E128,E122,E261,E501"
+let g:pymode_lint_signs = 0
 
 let g:SuperTabDefaultCompletionType = "context"
 
